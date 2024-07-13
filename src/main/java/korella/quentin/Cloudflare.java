@@ -13,8 +13,8 @@ public class Cloudflare extends Base {
     private String hostName;
     private String recordName;
     private String fullRecordName;
-    
-    public Cloudflare(){
+
+    public Cloudflare() {
         super("src/main/src/CloudflareConfig.xml");
 
         XMLConfiguration config = super.getConfig();
@@ -26,21 +26,21 @@ public class Cloudflare extends Base {
         fullRecordName = recordName + "." + hostName;
     }
 
-    protected String getHostName(){
+    protected String getHostName() {
         return hostName;
     }
 
-    protected String getRecordName(){
+    protected String getRecordName() {
         return recordName;
     }
 
-    protected String getApiToken(){
+    protected String getApiToken() {
         return apiToken;
     }
 
-    protected String getDnsZone(){
+    protected String getDnsZone() {
         return dnsZone;
-    }    
+    }
 
     @Override
     public JSONObject getRecordsByName() {
@@ -52,18 +52,18 @@ public class Cloudflare extends Base {
             System.err.println(e.getLocalizedMessage());
 
             return null;
-        }        
+        }
     }
 
     @Override
-    public void updateRecordsByName() throws Exception{
+    public void updateRecordsByName() throws Exception {
         JSONObject records = getRecordsByName();
         int recordsCount = records.getJSONObject("result_info").getInt("total_count");
-        String type = super.getUseIPv6() ? "AAAA": "A";
+        String type = super.getUseIPv6() ? "AAAA" : "A";
         String ip = super.getPublicIP();
 
-        if(recordsCount == 0){
-            throw(new Exception("No records with this name."));
+        if (recordsCount == 0) {
+            throw (new Exception("No records with this name."));
         }
 
         JSONArray recordsArray = records.getJSONArray("result");
@@ -71,7 +71,7 @@ public class Cloudflare extends Base {
         for (int i = 0; i < recordsArray.length(); i++) {
             JSONObject record = recordsArray.getJSONObject(i);
             String recordID = record.getString("id");
-            
+
             HashMap<String, Object> map = new HashMap<String, Object>();
             map.put("content", ip);
             map.put("name", fullRecordName);
