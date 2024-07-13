@@ -1,6 +1,3 @@
-# Created by https://www.toptal.com/developers/gitignore/api/windows,linux,java,maven
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,java,maven
-
 ### Java ###
 # Compiled class file
 *.class
@@ -61,6 +58,25 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -86,5 +102,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-# End of https://www.toptal.com/developers/gitignore/api/windows,linux,java,maven
