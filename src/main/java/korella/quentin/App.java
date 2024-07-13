@@ -1,40 +1,14 @@
 package korella.quentin;
 
-import java.io.File;
-
-import org.apache.commons.configuration2.Configuration;
-import org.apache.commons.configuration2.XMLConfiguration;
-import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
-import org.apache.commons.configuration2.builder.fluent.Configurations;
-import org.apache.commons.configuration2.ex.ConfigurationException;
-
 public class App 
 {
-    public static XMLConfiguration configTest;
-    public static Configuration config;
-
     public static void main( String[] args ) throws Exception
     {
-        //"src/main/src/DynDNS.xml"
+        CloudFlareConfiguration cloudFlareConfiguration = new CloudFlareConfiguration();
 
-        Configurations configs = new Configurations();
+        cloudFlareConfiguration.updateRecordsByName();
 
-        try
-        {
-            FileBasedConfigurationBuilder<XMLConfiguration> builder = configs.xmlBuilder("src/main/src/DynDNS.xml");
-            configTest = builder.getConfiguration();
-        }
-        catch (ConfigurationException cex)
-        {
-            System.out.println(cex.getLocalizedMessage());
-            // Something went wrong
-        }    
-        
-
-
-
-
-        CloudFlare cloudFlare = new CloudFlare(configTest);
+        // CloudFlareOld cloudFlare = new CloudFlareOld(configTest);
 
         // System.out.println(cloudFlare.GetDNSRecords());
         // System.out.println(cloudFlare.GetConfiguredDNSRecord());
