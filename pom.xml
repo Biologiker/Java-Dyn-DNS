@@ -6,7 +6,7 @@
 
   <groupId>korella.quentin</groupId>
   <artifactId>javadyndns</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 
   <name>javadyndns</name>
   <!-- FIXME change it to the project's website -->
