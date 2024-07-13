@@ -15,11 +15,12 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public abstract class BaseConfiguration {
+public abstract class Base {
     private static XMLConfiguration config;
     private boolean useIPv6;
+    private int refreshRateInMinutes;
 
-    public BaseConfiguration(String configPath){
+    public Base(String configPath){
         Configurations configs = new Configurations();
 
         try
@@ -37,6 +38,10 @@ public abstract class BaseConfiguration {
 
     protected boolean getUseIPv6(){
         return useIPv6;
+    }
+
+    protected int getRefreshRateInMinutes(){
+        return refreshRateInMinutes;
     }
 
     protected XMLConfiguration getConfig(){

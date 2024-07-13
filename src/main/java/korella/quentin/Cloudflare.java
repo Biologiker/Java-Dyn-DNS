@@ -7,14 +7,14 @@ import org.apache.commons.configuration2.XMLConfiguration;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class CloudFlareConfiguration extends BaseConfiguration {
+public class Cloudflare extends Base {
     private String apiToken;
     private String dnsZone;
     private String hostName;
     private String recordName;
     private String fullRecordName;
     
-    public CloudFlareConfiguration(){
+    public Cloudflare(){
         super("src/main/src/CloudflareConfig.xml");
 
         XMLConfiguration config = super.getConfig();
@@ -82,9 +82,7 @@ public class CloudFlareConfiguration extends BaseConfiguration {
 
             URI uri = new URI("https://api.cloudflare.com/client/v4/zones/" + dnsZone + "/dns_records/" + recordID);
 
-            JSONObject response = super.httpPutRequest(uri, "Bearer " + apiToken, "text/plain", body);
-            
-            System.out.println(response);
+            super.httpPutRequest(uri, "Bearer " + apiToken, "text/plain", body);
         }
     }
 }
