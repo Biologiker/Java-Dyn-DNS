@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
   <commonConfig>
-    <useIPv6></useIPv6>
+    <useIPv6>true</useIPv6>
+    <refreshRateInMinutes>10</refreshRateInMinutes>
   </commonConfig>
   <cloudFlareConfig>
     <apiToken></apiToken>
