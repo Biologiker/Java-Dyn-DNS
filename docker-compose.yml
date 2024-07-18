@@ -1,0 +1,11 @@
+services:
+  javadyndns:
+    image: eclipse-temurin:21
+    volumes:
+      - ./JavaDynDns.jar:/opt/app/JavaDynDns.jar:ro
+      - ./CloudflareConfig.xml:/opt/app/CloudflareConfig.xml:ro
+    entrypoint: java -jar JavaDynDns.jar
+    working_dir: /opt/app
+    network_mode: host
+    stdin_open: true
+    tty: true
