@@ -59,7 +59,6 @@ buildNumber.properties
 .classpath
 
 ### VisualStudioCode ###
-.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -105,4 +104,4 @@ $RECYCLE.BIN/
 *.lnk
 
 #Custom Kram
-src/main/src/*.xml
+src/main/resources/*.xml

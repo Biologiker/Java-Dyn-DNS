@@ -15,7 +15,7 @@ public class Cloudflare extends Base {
     private String fullRecordName;
 
     public Cloudflare() {
-        super("src/main/src/CloudflareConfig.xml");
+        super("./CloudflareConfig.xml");
 
         XMLConfiguration config = super.getConfig();
 
