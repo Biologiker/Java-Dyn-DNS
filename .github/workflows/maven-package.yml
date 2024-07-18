@@ -22,4 +22,4 @@ jobs:
           name: artifacts
           path: |
             ./target/JavaDynDns.jar
-            ./target/CloudflareConfig.xml
+            ./target/CloudflareConfig.xml.template
