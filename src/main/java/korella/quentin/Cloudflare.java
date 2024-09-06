@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.HashMap;
 
 import org.apache.commons.configuration2.XMLConfiguration;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -14,8 +15,8 @@ public class Cloudflare extends Base {
     private String recordName;
     private String fullRecordName;
 
-    public Cloudflare() {
-        super("./CloudflareConfig.xml");
+    public Cloudflare(Logger logger) {
+        super("./CloudflareConfig.xml", logger);
 
         XMLConfiguration config = super.getConfig();
 

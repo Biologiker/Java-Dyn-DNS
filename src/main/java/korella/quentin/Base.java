@@ -12,6 +12,7 @@ import org.apache.commons.configuration2.XMLConfiguration;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -20,7 +21,7 @@ public abstract class Base {
     private boolean useIPv6;
     private int refreshRateInMinutes;
 
-    public Base(String configPath) {
+    public Base(String configPath, Logger logger) {
         Configurations configs = new Configurations();
 
         try {
@@ -53,7 +54,7 @@ public abstract class Base {
         }
 
         try {
-            Scanner scanner = new Scanner(new URL(url).openStream(), "UTF-8");
+            Scanner scanner = new Scanner(new URI(url).toURL().openStream(), "UTF-8");
             String ip = scanner.nextLine();
 
             scanner.close();

@@ -104,4 +104,4 @@ $RECYCLE.BIN/
 *.lnk
 
 #Custom Kram
-src/main/resources/*.xml
+src/main/resources/CloudflareConfig.xml
